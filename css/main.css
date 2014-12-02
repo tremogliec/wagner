@@ -408,6 +408,10 @@ h2 {
 h3 {
   font-weight: normal; }
 
+p {
+  font-family: "Open Sans", sans-serif;
+  font-weight: normal; }
+
 /*!////////////////////////////////////////////////
 // Header
 /////////////////////////////////////////////////*/
@@ -476,21 +480,62 @@ h3 {
   background: url("../img/no-crush-rollers-header.jpg") no-repeat top;
   background-size: cover;
   position: relative; }
+  .home__gallery > div {
+    position: absolute;
+    bottom: 60px;
+    width: 35%; }
 
 .home__title {
-  background-color: #424242;
+  background: rgba(66, 66, 66, 0.9);
   text-align: right;
-  padding: 5px;
-  position: absolute;
-  top: 30px; }
+  padding: 10px 25px 10px 10px; }
   .home__title h2 {
     color: white;
     font-family: "Open Sans", sans-serif;
     font-size: 2.25em; }
 
+.home__sub-title {
+  background: rgba(205, 41, 46, 0.9);
+  padding: 5px;
+  text-align: right;
+  padding: 10px 25px 10px 10px;
+  width: 95%; }
+  .home__sub-title h3 {
+    color: white;
+    font-family: "Open Sans", sans-serif;
+    font-size: 1.5em; }
+
 /*!////////////////////////////////////////////////
 // Home
 /////////////////////////////////////////////////*/
+.cta-h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.25em;
+  color: white;
+  text-decoration: underline; }
+
+.home__cta1 {
+  background: url("../img/wagner-cta1.png") no-repeat bottom right;
+  background-color: #424242; }
+
+section p {
+  color: white;
+  padding: 20px 20px 60px 0;
+  font-size: 1.125em; }
+section .wrap .grid-half {
+  margin-top: 60px; }
+section .wrap .grid-half.no-margin:nth-child(n) {
+  margin-bottom: 120px; }
+
+.cta__search input {
+  display: inline-block; }
+.cta__search .cta_submit-input {
+  background: url("../img/cta-search.png") no-repeat center;
+  background-size: cover;
+  width: 40px;
+  height: 28px;
+  border: 2px white; }
+
 /*!////////////////////////////////////////////////
 // Category Pages
 /////////////////////////////////////////////////*/
