@@ -380,11 +380,16 @@ textarea {
 /////////////////////////////////////////////////*/
 .wrap {
   max-width: 1280px;
+  padding: 0 10px;
   height: auto;
   margin: 0 auto; }
 
 a {
-  text-decoration: none; }
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out; }
 
 img {
   max-width: 100%;
@@ -406,11 +411,15 @@ h2 {
   font-weight: normal; }
 
 h3 {
-  font-weight: normal; }
+  font-weight: normal;
+  font-size: 1.875em; }
 
 p {
   font-family: "Open Sans", sans-serif;
   font-weight: normal; }
+
+ul {
+  list-style-type: none; }
 
 /*!////////////////////////////////////////////////
 // Header
@@ -437,20 +446,20 @@ p {
     font-family: "Open Sans", sans-serif;
     font-size: 1em;
     margin-right: 3%;
-    padding: 10px;
+    padding: 15px;
     display: inline-block;
-    -webkit-transition: all 0.2s ease-in-out;
-    -moz-transition: all 0.2s ease-in-out;
-    -o-transition: all 0.2s ease-in-out;
-    transition: all 0.2s ease-in-out;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    position: relative; }
   .nav-container a:hover {
-    background-color: #f17272; }
+    background-color: white;
+    color: #424242; }
 
 .search-container {
   float: right;
   display: inline-block;
-  padding-top: 8px; }
+  padding-top: 12px; }
+  .search-container input {
+    font-style: italic; }
 
 .logo-container {
   display: inline-block;
@@ -462,7 +471,8 @@ p {
     font-family: "Playfair Display", serif;
     font-size: 1.875em;
     float: right;
-    margin-top: 35px; }
+    margin-top: 35px;
+    padding-right: 10px; }
 
 .submit-input {
   background: url("../img/search.png") no-repeat center;
@@ -484,6 +494,9 @@ p {
     position: absolute;
     bottom: 60px;
     width: 35%; }
+  @media screen and (min-width: 1501px) {
+    .home__gallery > div {
+      width: 40%; } }
 
 .home__title {
   background: rgba(66, 66, 66, 0.9);
@@ -512,33 +525,172 @@ p {
   font-family: "Playfair Display", serif;
   font-size: 2.25em;
   color: white;
-  text-decoration: underline; }
+  border-bottom: solid 2px #c5bd99;
+  line-height: 0.95em;
+  display: inline-block; }
 
 .home__cta1 {
-  background: url("../img/wagner-cta1.png") no-repeat bottom right;
-  background-color: #424242; }
+  background: #424242 url("../img/wagner-cta1.png") no-repeat bottom right;
+  background-size: 65%; }
+
+.home__cta2 {
+  background: #424242 url("../img/wagner-cta2.png") no-repeat bottom right;
+  background-size: 57%; }
 
 section p {
   color: white;
-  padding: 20px 20px 60px 0;
+  padding: 20px 120px 60px 0;
   font-size: 1.125em; }
 section .wrap .grid-half {
-  margin-top: 60px; }
+  margin-top: 70px; }
 section .wrap .grid-half.no-margin:nth-child(n) {
-  margin-bottom: 120px; }
+  margin-bottom: 165px; }
 
-.cta__search input {
+@media screen and (min-width: 1390px) {
+  .home__cta1 {
+    background: #424242 url("../img/wagner-cta1.png") no-repeat bottom right;
+    background-size: 55%; }
+
+  .home__cta2 {
+    background: #424242 url("../img/wagner-cta2.png") no-repeat bottom right;
+    background-size: 50%; } }
+@media screen and (min-width: 1714px) {
+  .home__cta1 {
+    background: #424242 url("../img/wagner-cta1.png") no-repeat top right;
+    background-size: 55%; }
+
+  .home__cta2 {
+    background: #424242 url("../img/wagner-cta2.png") no-repeat top right;
+    background-size: 50%; } }
+::-webkit-input-placeholder {
+  color: #424242;
+  opacity: 1; }
+
+:-moz-placeholder {
+  color: #424242;
+  opacity: 1; }
+
+::-moz-placeholder {
+  color: #424242;
+  opacity: 1; }
+
+:-ms-input-placeholder {
+  color: #424242;
+  opacity: 1; }
+
+.cta__search div {
+  position: relative;
   display: inline-block; }
+.cta__search input {
+  display: inline-block;
+  font-family: "Open Sans", sans-serif;
+  font-weight: bold;
+  padding: 5px; }
+.cta__search input::-webkit-input-placeholder,
+.cta__search input::-webkit-input-placeholder {
+  color: #424242; }
+.cta__search input:-moz-placeholder, .cta__search input:-moz-placeholder {
+  color: #424242; }
+.cta__search input::-moz-placeholder,
+.cta__search input::-moz-placeholder {
+  color: #424242; }
+.cta__search input:-ms-input-placeholder,
+.cta__search input:-ms-input-placeholder {
+  color: #424242; }
 .cta__search .cta_submit-input {
   background: url("../img/cta-search.png") no-repeat center;
   background-size: cover;
   width: 40px;
-  height: 28px;
-  border: 2px white; }
+  height: 30px;
+  border: 2px white;
+  position: absolute;
+  right: 2px;
+  top: 3px; }
+
+.cta__button a {
+  font-family: "Open Sans", sans-serif;
+  text-transform: uppercase;
+  background-color: white;
+  padding: 10px 20px;
+  color: #424242;
+  font-weight: bold;
+  border: 2px solid white; }
+.cta__button a:hover {
+  background-color: #424242;
+  color: white;
+  border: 2px solid #c5bd99; }
+
+.home__catalog {
+  margin-top: 60px;
+  margin-bottom: 80px; }
+  .home__catalog h3 {
+    margin-bottom: 20px;
+    font-family: "Open Sans", sans-serif; }
+  .home__catalog img {
+    border: 2px solid #c5bd99; }
+  .home__catalog p {
+    font-weight: bold;
+    margin-top: 10px; }
 
 /*!////////////////////////////////////////////////
 // Category Pages
 /////////////////////////////////////////////////*/
+.page__info {
+  margin-top: 60px;
+  margin-bottom: 80px; }
+  .page__info h2 {
+    font-family: "Playfair Display", serif;
+    text-decoration: underline;
+    font-size: 1.875em; }
+  .page__info p {
+    margin-bottom: 20px; }
+
+.page__catalog p {
+  margin-bottom: 2px;
+  font-weight: bold; }
+.page__catalog img {
+  width: 100%;
+  height: auto; }
+.page__catalog .grid-25 {
+  margin-bottom: 60px; }
+
+/*!////////////////////////////////////////////////
+// Footer
+/////////////////////////////////////////////////*/
+footer {
+  background-color: #cd292e;
+  padding-top: 20px; }
+  footer .wrap {
+    position: relative;
+    padding-bottom: 80px; }
+  footer li, footer a, footer p {
+    color: white;
+    text-transform: uppercase;
+    font-size: 0.875em; }
+  footer a:hover {
+    text-decoration: underline; }
+  footer li.title, footer p {
+    font-weight: bold;
+    margin-bottom: 20px; }
+
+.footer__search form {
+  width: 100%;
+  text-align: right; }
+.footer__search .search-input {
+  width: 50%; }
+
+.footer__copyright {
+  width: 98%;
+  position: absolute;
+  bottom: 0; }
+  .footer__copyright p {
+    display: inline-block; }
+  .footer__copyright a {
+    font-size: 1em; }
+
+.right {
+  float: right; }
+
 /*!////////////////////////////////////////////////
 // STATES
 /////////////////////////////////////////////////*/
