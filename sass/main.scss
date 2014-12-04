@@ -33,6 +33,11 @@ $hover-bg:#f17272;
 	padding: 0 10px;
 	height: auto;
 	margin: 0 auto;
+
+	@media screen and (max-width: 480px) {
+		padding: 0 5px;
+		width: 100%;
+	}
 }
 
 a {
@@ -54,6 +59,11 @@ h1 {
 	display: inline-block;
 	vertical-align: middle;
 	margin-left: 10px;
+
+	@media screen and (max-width: 653px) {
+		display: block;
+		width: 100%;
+	}
 
 	span {
 		font-size: 1.25em;
@@ -92,6 +102,12 @@ ul {
 	padding:40px 0;
 }
 
+
+.relative-container {
+	position: relative;
+}
+
+
 .nav-container {
 	background-color: $red;
 	width: 100%;
@@ -102,6 +118,10 @@ ul {
 		display: inline-block;
 		text-align: left;
 		width: 80%;
+
+		@media screen and (max-width: 1107px) {
+			width: 100%;
+		}
 	}
 
 	a {
@@ -113,6 +133,16 @@ ul {
 		display: inline-block;
 		text-transform: uppercase;
 		position: relative;
+
+		@media screen and (max-width: 918px) {
+			padding: 15px 10px;
+			margin-right: 1%;
+		}
+
+		@media screen and (max-width: 659px) {
+			width: 100%;
+			padding: 10px;
+		}
 	}
 
 	a:hover {
@@ -120,6 +150,53 @@ ul {
 		color: $grey;
 	}
 
+	.dropdown-container {
+		display: inline-block;
+		margin-right: 3%;
+
+		@media screen and (max-width: 659px) {
+			width: 100%;
+		}
+	}
+
+	.dropdown {
+		position: absolute;
+		z-index: 10;
+		background-color: $red;
+		display: inline-block;
+		top: 51px;
+		left: 120px;
+		display: none;
+
+		@media screen and (max-width: 659px) {
+			position: relative;
+			left: 0;
+			top: 0;
+		}
+
+
+		a {
+			display: block;
+			padding: 10px 15px;
+			margin-right: 0;
+
+			@media screen and (max-width: 659px) {
+				padding: 5px 40px;
+			}
+		}
+	}
+
+	.dropdown-container:hover {
+		> a {
+			background-color: $white;
+			color:$grey;
+		}
+		.dropdown {
+			display: block;
+		}
+
+
+	}
 
 }
 
@@ -128,14 +205,41 @@ ul {
 	display: inline-block;
 	padding-top: 12px;
 
+	@media screen and (max-width: 1107px) {
+		position: absolute;
+		margin-bottom: 10px;
+		bottom: 0;
+		right: 0;
+	}
+
+	@media screen and (max-width: 812px) {
+		position: relative;
+		float: none;
+	}
+
 	input {
 		font-style: italic;
+	}
+
+	.search-input {
+		@media screen and (max-width: 1107px) {
+			width: 100px;
+		}
+
+
+		@media screen and (max-width: 812px) {
+			width: 150px;
+		}
 	}
 }
 
 .logo-container {
 	display: inline-block;
 	width: 100%;
+
+	@media screen and (max-width: 653px) {
+		text-align: center;
+	}
 
 	img {
 		display: inline-block;
@@ -148,6 +252,11 @@ ul {
 		float: right;
 		margin-top: 35px;
 		padding-right: 10px;
+
+		@media screen and (max-width: 865px) {
+			float: none;
+			margin-top: 0;
+		}
 	}
 }
 
@@ -163,23 +272,32 @@ ul {
 // Gallery
 /////////////////////////////////////////////////*/
 
-.home__gallery {
-	width: 100%;
-	height: 572px;
-	background: url('../img/no-crush-rollers-header.jpg') no-repeat top;
-	background-size: cover;
-	position: relative;
 
-	> div {
-		position: absolute;
-		bottom: 60px;
-		width: 35%;
+.home__gallery-header-container {
+	position: absolute;
+	bottom: 100px;
+	width: 35%;
+
+	@media screen and (max-width: 1190px) {
+		width: 45%;
 	}
 
-	@media screen and (min-width: 1501px) {
-		> div {
-			width: 40%;
-		}
+	@media screen and (max-width: 1050px) {
+		bottom: 40px;
+	}
+
+	@media screen and (max-width: 952px) {
+		width: 50%;
+	}
+
+	@media screen and (max-width: 872px) {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 1501px) {
+	> div {
+		width: 40%;
 	}
 }
 
@@ -210,6 +328,81 @@ ul {
 	}
 } 
 
+
+/*!////////////////////////////////////////////////
+// R Slides
+/////////////////////////////////////////////////*/
+.rslides {
+	position: relative;
+	list-style: none;
+	overflow: hidden;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+}
+
+.rslides li {
+	-webkit-backface-visibility: hidden;
+	position: absolute;
+	display: none;
+	width: 100%;
+	left: 0;
+	top: 0;
+}
+
+.rslides li:first-child {
+	position: relative;
+	display: block;
+	float: left;
+}
+
+.rslides img {
+	display: block;
+	height: auto;
+	float: left;
+	width: 100%;
+	border: 0;
+}
+
+.rslides1_s1 a, .rslides1_s2 a, .rslides1_s3 a {
+	width: 13px;
+	height: 13px;
+	border-radius: 7px;
+	background-color: #aaaaaa;
+	text-decoration: none;
+	font-size: 1px;
+	display: inline-block;
+	margin-left: 10px;
+	position: relative;
+	top: -10px;
+	display: inline-block;
+	opacity: 0.75;
+}
+
+.rslides_here a{
+	background-color: $grey;
+}
+
+.rslides1_s1, .rslides1_s2, .rslides1_s3 {
+	display: inline-block;
+}
+
+.rslides_tabs {
+	margin-top: -35px;
+	z-index: 5;
+	position: relative;
+	text-align: center;
+}
+
+@media screen and (min-width: 1709px) {
+	.rslides {
+		height: 700px;
+	}
+
+	.home__gallery-header-container {
+		bottom: 262px;
+	}
+}
 /*!////////////////////////////////////////////////
 // Home
 /////////////////////////////////////////////////*/
@@ -225,11 +418,19 @@ ul {
 .home__cta1 {
 	background: $grey url('../img/wagner-cta1.png') no-repeat bottom right;
 	background-size: 65%;
+
+	@media screen and (max-width: 548px) {
+		background: $grey;
+	}
 }
 
 .home__cta2 {
 	background: $grey url('../img/wagner-cta2.png') no-repeat bottom right;
 	background-size: 57%;
+
+	@media screen and (max-width: 548px) {
+		background: $grey;
+	}
 }
 
 section {
@@ -237,6 +438,10 @@ section {
 		color: $white;
 		padding: 20px 120px 60px 0;
 		font-size: em(18px,$font-size);
+
+		@media screen and (max-width: 1130px) {
+			padding: 20px 0 60px 0;
+		}
 	}
 	
 	.wrap {
@@ -246,6 +451,20 @@ section {
 
 		.grid-half.no-margin:nth-child(n) {
 			margin-bottom: 165px;
+
+					@media screen and (max-width: 994px) {
+			margin-bottom: 120px;
+		}
+
+			@media screen and (max-width: 548px) {
+		margin-bottom: 70px;
+	}
+		}
+	}
+
+	@media screen and (max-width: 961px) {
+		.grid-half.no-margin {
+			width: 100%;
 		}
 	}
 }
@@ -264,7 +483,7 @@ section {
 }
 
 @media screen and (min-width: 1714px) {
-		.home__cta1 {
+	.home__cta1 {
 		background: $grey url('../img/wagner-cta1.png') no-repeat top right;
 		background-size: 55%;
 	}
@@ -275,20 +494,20 @@ section {
 }
 
 ::-webkit-input-placeholder {
-    color:    $grey;
-    opacity: 1;
+	color:    $grey;
+	opacity: 1;
 }
 :-moz-placeholder {
-    color:    $grey;
-    opacity: 1;
+	color:    $grey;
+	opacity: 1;
 }
 ::-moz-placeholder {
-    color:    $grey;
-    opacity: 1;
+	color:    $grey;
+	opacity: 1;
 }
 :-ms-input-placeholder {
-    color:    $grey;
-    opacity: 1;
+	color:    $grey;
+	opacity: 1;
 }
 
 
@@ -321,9 +540,9 @@ section {
 	}
 
 	input:-ms-input-placeholder,
-input:-ms-input-placeholder {
-color: $grey;
-}
+	input:-ms-input-placeholder {
+		color: $grey;
+	}
 
 	.cta_submit-input {
 		background: url('../img/cta-search.png') no-repeat center;
@@ -332,8 +551,8 @@ color: $grey;
 		height: 30px;
 		border:2px white;
 		position: absolute;
-right: 2px;
-top: 3px;
+		right: 2px;
+		top: 3px;
 	}
 }
 
@@ -347,7 +566,15 @@ top: 3px;
 		color: $grey;
 		font-weight: bold;
 		border: 2px solid $white;
+
+			@media screen and (max-width: 548px) {
+		display: inline-block;
+		width: 100%;
+		text-align: center;
 	}
+	}
+
+
 	a:hover {
 		background-color: $grey;
 		color: $white;
@@ -358,7 +585,7 @@ top: 3px;
 
 .home__catalog {
 	margin-top: 60px;
-	margin-bottom: 80px;
+	margin-bottom: 60px;
 
 	h3 {
 		margin-bottom: 20px;
@@ -367,11 +594,13 @@ top: 3px;
 
 	img {
 		border: 2px solid $gold;
+		width: 100%;
 	}
 
 	p {
 		font-weight: bold;
 		margin-top: 10px;
+		margin-bottom: 20px;
 	}
 }
 
@@ -388,6 +617,7 @@ top: 3px;
 		font-family: $font-h2;
 		text-decoration: underline;
 		font-size: em(30px,$font-size);
+		margin-bottom: 60px;
 	}
 
 	p {
@@ -411,6 +641,122 @@ top: 3px;
 	}
 }
 
+
+/*!////////////////////////////////////////////////
+// Page Gallery
+/////////////////////////////////////////////////*/
+
+.thumbnail {
+	width: 90px;
+	height: 60px;
+	display: inline-block;
+	margin-right: 1%;
+	@include prefix(transition, all 0.3s ease-in-out);
+	border: 2px solid white;
+}
+
+.thumbnail:hover {
+	cursor: pointer;
+	border: 2px solid $gold;
+}
+
+#main-image {
+	width: 100%;
+}
+
+.thumbnail__container {
+	text-align: center;
+	margin-top: 20px;
+}
+
+/*!////////////////////////////////////////////////
+// Filters
+/////////////////////////////////////////////////*/
+.filter__field-container {
+	position: relative;
+}
+
+
+.div_dropdown_container, .div_dropdown_container2 {
+	margin-top: 20px;
+	background-color: $red;
+	color: $white;
+	padding: 5px 10px 5px 10px;
+	font-style: italic;
+	cursor: pointer;
+	display: inline-block;
+	font-family: $font-body;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.div_dropdown_list, .div_dropdown_list2 {
+	background-color: $red;
+	color: $white;
+	display: inline-block;
+	position: absolute;
+	z-index: 5;
+	top: 60px;
+	left: 0;
+
+	li {
+		padding: 5px 100px 5px 10px;
+		cursor: pointer;
+		border: 2px solid $red;
+	}
+
+	li:hover {
+		background-color: $white;
+		color: $grey;
+	}
+}
+
+.div_dropdown_list2 {
+	top: 49px;
+}
+
+.arrow_down {
+	padding-left: 15px;
+}
+
+.size_search-container {
+	margin-top: 10px;
+	margin-left: 10px;
+	color: $white;
+	position: relative;
+	display: inline-block;
+	width: 60%;
+
+	p.header {
+		background-color: $red;
+		padding: 5px 10px 5px 10px;
+	}
+
+	div {
+		background-color: $red;
+		padding: 5px 10px 5px 10px;
+	}
+	p {
+		display: inline-block;
+		font-family: $font-body;
+		font-weight: bold;
+		text-transform: uppercase;
+		font-style: italic;
+	}
+
+	input {
+		width: 60px;
+	}
+
+	.search_submit-input {
+		background: url("../img/search.png") no-repeat scroll center center / cover transparent;
+		width: 40px;
+		height: 28px;
+		border: medium none;
+	}
+}
+
+
 /*!////////////////////////////////////////////////
 // Footer
 /////////////////////////////////////////////////*/
@@ -419,8 +765,8 @@ footer {
 	padding-top: 20px;
 
 	.wrap {
-	position: relative;
-	padding-bottom: 80px;
+		position: relative;
+		padding-bottom: 80px;
 	}
 
 	li, a, p {
@@ -441,8 +787,8 @@ footer {
 
 .footer__search {
 	form {
-	width: 100%;
-	text-align: right;
+		width: 100%;
+		text-align: right;
 	}
 
 	.search-input {
