@@ -20,6 +20,13 @@ $(document).ready(function(){
   });
 });
 
+$(document).ready(function(){
+    $(".thumbnail").click(function(){
+    $(this).siblings().removeClass("thumbnail__active");
+    $(this).addClass("thumbnail__active");   
+  });
+});
+
 
 function showImage(imgName) {
      var curImage = document.getElementById('main-image');
